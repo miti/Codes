@@ -1,0 +1,28 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int main()
+{
+  int a,b,x,ycount;
+  int n,k,i,m;
+  cin>>x>>y>>m;
+  k=min(x,y);  
+  for(i=k+1;i<=m;i++)
+  {
+    a=m;
+    b=i;
+	count=0;
+    for(;(a>x && b>y) || (a>y && b>x);count++)
+    {
+	  int temp=min(a,b);
+	  a=fabs(a-b);
+	  b=temp;
+	}
+    if((a==x && b==y)|| (a==y && b==x))
+     k= min(k,count);
+  }
+  cout<<"Required is"<<k;
+  return 0;
+}  
+	

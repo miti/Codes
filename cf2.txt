@@ -1,0 +1,40 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+ string a;
+ int i,t=0;
+ cin>>a;
+ int x=a.length();
+ string b="heavy";
+ string c="metal";
+ int j=0,k=0,h=0;
+ int l= b.length()-1;
+ int l2=c.length()-1;
+ for(i=0;i<a.length();i++)
+ {
+  if(j<l && a[i]==b[j])
+  {
+   j++;
+   if(j==l)
+  {
+  h++;
+  j=0;
+  }
+  }  
+  else if( h>0 && k<l2 && a[i]==c[k])
+   k++;   
+  if(j==0 && k==l2 && h>0)
+  {
+   k=0;
+   t+=h;
+   h=0;
+  }
+ }  
+ cout<<a.find(b)<<" "<<a.rfind(c); 
+ if(a.find(b)==0 && a.rfind(c)==x-(l2+1))
+    t++;
+ cout<<t;  
+ return 0;
+} 

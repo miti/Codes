@@ -1,0 +1,24 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int main()
+{
+  int a,b,x,y,count;
+  int n,k,i,m;
+  cin>>x>>y>>m;
+  k=min(x,y);
+  int t = max(x,y);
+  a=k;  
+  b=t;
+  for(;a<m && b<m;count++)
+  {
+    int temp= a+b;
+	a=temp;
+	b=t;
+    t = max(x,y);
+  }  
+  cout<<count;
+  return 0;
+}  
+	
